@@ -95,7 +95,7 @@ title: "WowPage"
 name: "Your Name"
 description: "A clean academic homepage template."
 author:
-  avatar: "1.png"
+  avatar: "tigger.jpeg"
   name: "Your Name"
   bio: "Student and researcher."
   location: "City, Country"

@@ -16,10 +16,10 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 {% if page.stylesheets %}
   {% for stylesheet in page.stylesheets %}
-    <link rel="stylesheet" href="{{ stylesheet | prepend: base_path }}">
+    <link rel="stylesheet" href="{{ stylesheet | relative_url }}">
   {% endfor %}
 {% endif %}
 

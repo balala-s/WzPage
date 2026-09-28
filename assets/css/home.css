@@ -7,7 +7,7 @@
     #publications,
     #projects,
     #awards,
-    #talks {
+    #patents {
         scroll-margin-top: 80px;
     }
   
@@ -56,12 +56,23 @@
     .experience-logo {
         width: 60px;
         height: 60px;
+        flex: 0 0 60px;
         margin-right: 20px;
         border-radius: 8px;
         object-fit: contain;
     }
     .experience-info {
         font-family: "Segoe UI", sans-serif;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+    .experience-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+        color: #ca6f6f;
+        font-size: 28px;
     }
     .experience-info strong {
         font-size: 1.1em;
@@ -78,288 +89,168 @@
     .experience-card {
         box-sizing: border-box;
     }
-    .publication-card {
-        display: flex;
-        align-items: center;
-        padding: 3px;
-        border: 1.5px solid #ddd;
-        border-radius: 8px;
-        background: #fff;
-        box-sizing: border-box;
-        margin-bottom: 20px; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        color: #5f6368;
-    }
-    .publication-card > div > strong,
-    .publication-card > div > div > strong {
-        color: #202124;
-    }
-    .publication-card i {
-        color: #6b7280;
-    }
-
-    .pub-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35em;
-        margin-left: 8px;
-        padding: 2px 8px;
-        border-radius: 999px;
-        font-size: 11px;
-        font-weight: 650;
-        line-height: 1.4;
-        letter-spacing: 0.01em;
-        vertical-align: middle;
-        white-space: nowrap;
-        border: 1px solid transparent;
-        background: rgba(107, 114, 128, 0.08);
-        color: #6b7280;
-    }
-
-    .pub-badge::before {
-        content: "";
-        width: 0.45em;
-        height: 0.45em;
-        border-radius: 999px;
-        background: currentColor;
-        opacity: 0.75;
-    }
-
-    .pub-badge--oral {
-        margin-left: 4px;
-        vertical-align: 2px;
-        color: #4c6a94;
-        background: rgba(131, 161, 199, 0.14);
-        border-color: rgba(131, 161, 199, 0.35);
-    }
-    .publication-card:hover {
-       
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-
-    .publication-card.featured {
-        border-color: #f5bba7;
-        background: #fef5f1;
-        box-shadow: 0 4px 8px rgba(242, 166, 120, 0.2);
-        z-index: 10;
-    }
-
-    .publication-card.featured:hover {
-        box-shadow: 0 8px 16px rgba(242, 166, 120, 0.4); 
-    }
-    
-    /*.publication-card.non-featured {*/
-        /*display: flex;*/
-    /*}*/
-    
-    .pub-button-container {
-        display: flex;
-        gap: 10px;
-        margin: 20px 0;
-        flex-wrap: wrap;
-    }
-    
-    .pub-button {
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        border-radius: 20px;
-        padding: 8px 16px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .pub-button:hover {
-        background-color: #e0e0e0;
-    }
-    
-    .pub-button.active {
-        background-color: #ca6f6f;
-        color: white;
-        border-color: #ca6f6f;
-    }
-
-      .publication-view[hidden] {
-        display: none !important;
-    }
-
-      #full-publications {
-        max-height: 380px;
-        overflow-y: auto;
-        padding-right: 8px;
-        margin-bottom: 24px;
-        scroll-behavior: smooth;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(185, 95, 61, 0.45) rgba(254, 245, 241, 0.7);
-    }
-
-    #full-publications::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    #full-publications::-webkit-scrollbar-track {
-        background: rgba(254, 245, 241, 0.7);
-        border-radius: 999px;
-    }
-
-    #full-publications::-webkit-scrollbar-thumb {
-        background: rgba(185, 95, 61, 0.45);
-        border-radius: 999px;
-    }
-
-    #full-publications::-webkit-scrollbar-thumb:hover {
-        background: rgba(185, 95, 61, 0.65);
-    }
-  
-    .full-publication-list {
-        margin: 0;
-        padding-left: 1.25rem;
-        color: #5f6368;
-        font-size: 15px;
-        line-height: 1.55;
-    }
-
-    .full-publication-list li {
-        margin-bottom: 14px;
-    }
-
-    .pub-list-badge {
-        display: inline-block;
-        margin-right: 6px;
-        padding: 2px 8px;
-        border-radius: 999px;
-        border: 1px solid rgba(245, 187, 167, 0.75);
-        background: #fef5f1;
-        color: #b95f3d;
-        font-size: 11px;
-        font-weight: 650;
-        line-height: 1.35;
-        vertical-align: 1px;
-        white-space: nowrap;
-    }
-
-    .full-publication-list .pub-list-title {
-        color: #202124;
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 1.45;
-        text-decoration: none !important;
-    }
-
-      .pub-list-authors {
-        color: #6b7280;
-        font-size: 13px;
-        font-style: italic;
-    }
-
-    .pub-list-authors > strong {
-        color: #202124;
-    }
-
-      .pub-list-authors a strong {
-        color: inherit;
-    }
-
-    .pub-list-note {
-        color: #c7774c;
-        font-style: italic;
-        font-weight: 650;
-    }
-
-    .pub-list-links {
-        white-space: nowrap;
-    }
-
-    .pub-list-links a {
-        margin-left: 4px;
-        color: #c7774c !important;
-        font-weight: 600;
-    }
-
-      .pub-list-links a:hover {
-        color: #b65f36 !important;
-    }
-
-    /* Projects cards: keep styles independent from publications */
+    .publication-card,
     .project-card {
         display: flex;
         align-items: center;
-        padding: 3px;
+        gap: 16px;
+        padding: 8px;
         border: 1.5px solid #ddd;
         border-radius: 8px;
         background: #fff;
         box-sizing: border-box;
         margin-bottom: 20px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
         color: #5f6368;
+        transition: box-shadow 0.3s ease;
     }
 
-    .project-card > div > strong,
-    .project-card > div > div > strong {
+    .publication-card:hover,
+    .project-card:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .publication-content,
+    .project-content {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
+
+    .publication-image,
+    .project-image {
+        display: block;
+        flex: 0 0 32%;
+        width: 32%;
+        height: auto;
+        max-width: 320px;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .publication-card .publication-title,
+    .project-card .project-title {
+        margin: 0 0 8px;
+        font-size: 1.05em;
+        line-height: 1.45;
+    }
+
+    .publication-card .publication-title a,
+    .project-card .project-title a {
         color: #202124;
     }
 
-    .project-card i {
+    .publication-card .publication-title a:hover,
+    .project-card .project-title a:hover {
+        color: #ca6f6f;
+    }
+
+    .publication-card .publication-authors {
+        margin: 0 0 10px;
+        font-size: 13px;
+        font-style: italic;
+        line-height: 1.6;
         color: #6b7280;
     }
 
-    .project-card:hover {
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    .publication-authors strong {
+        color: #ca6f6f;
+    }
+
+    .publication-card .publication-summary,
+    .project-card .project-summary {
+        margin: 0 0 12px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .publication-footer,
+    .project-footer {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        font-size: 15px;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .publication-venue,
+    .project-venue {
+        color: #83a1c7;
     }
 
       @media (max-width: 720px) {
         .publication-card,
         .project-card {
+            flex-direction: column;
             align-items: stretch;
+            gap: 12px;
             padding: 8px;
         }
 
-        .publication-card > div,
-        .project-card > div {
-            flex-direction: column;
-            align-items: stretch !important;
+        .publication-image,
+        .project-image {
+            flex: none;
+            align-self: center;
             width: 100%;
+            max-width: 100%;
         }
 
-        .publication-card .pub-media-rotator,
-        .project-card .pub-media-rotator {
-            width: 100% !important;
-            height: auto !important;
-            aspect-ratio: 16 / 9;
-            margin-right: 0 !important;
-            margin-bottom: 12px;
-        }
-
-        .publication-card .pub-media-rotator > img,
-        .project-card .pub-media-rotator > img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain;
-        }
-
-        .publication-card strong,
-        .project-card strong {
-            line-height: 1.35;
-        }
-
-        .full-publication-list {
-            padding-left: 1rem;
-        }
-
-        .pub-list-badge {
-            margin-bottom: 4px;
-        }
     }
         body {
             background-color:	 #FFFFFF;
             font-family: 'Arial Rounded MT Bold', 'Verdana', sans-serif;
             font-size: 15px;
         }
-        .main-heading {
-            font-family: 'Permanent Marker', cursive;
-            text-align: center;
-            color: #ca6f6f;
+        .home-banner-wrap {
+            margin-bottom: 16px;
+        }
+
+        .home-banner {
+            --banner-height: 120px;
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: var(--banner-height);
+            object-fit: contain;
+            object-position: center bottom;
+            margin: 0 auto;
+        }
+
+        /* Give the banner and avatar the same row height so the text aligns. */
+        @media (min-width: 925px) {
+            #main {
+                --home-avatar-size: 136.5px;
+            }
+
+            .sidebar .author__avatar img {
+                display: block;
+                width: var(--home-avatar-size);
+                height: var(--home-avatar-size);
+                object-fit: cover;
+            }
+
+            .sidebar .author__name {
+                line-height: 1.5;
+            }
+
+            .home-banner-wrap {
+                display: flex;
+                align-items: flex-end;
+                height: var(--home-avatar-size);
+                margin-bottom: 10px;
+            }
+
+            .home-banner {
+                height: var(--banner-height);
+                max-height: 100%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #main {
+                --home-avatar-size: min(175px, 15.254237vw);
+            }
         }
         div.markdown-body a,a {
             text-decoration: none !important;
@@ -370,7 +261,3 @@
             color: #c71585;
             text-decoration: underline;
         }
-
-
-
-
